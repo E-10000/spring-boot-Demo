@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--"hello ==> "你好"-->
+<div th:text="${hello}" > asdasd </div>
+<!-- "person" ==> new Person("小明",18) -->
+<!--调用Person下的show()方法-->
+<div th:text="${person.show()}">使用person.show()</div>
+<!--直接打印地址-->
+<div th:text="${person}">打印地址</div>
+<div th:text="${person.name}"></div>
+<div th:text="${person.getAge()}"></div>
+<!-- ${users}  ==> ArrayList<String> arrayList
+   arrayList添加了两个String：小明、小兰
+   th:each相当于foreach,遍历arrayList，然后每一个的值都是user
+   然后th:text="${user}，输出对应的arrayList遍历值
+-->
+<div th:each="user:${users}" th:text="${user}"></div>
+<!--foreach( a : array )-->
+</body>
+</html>
